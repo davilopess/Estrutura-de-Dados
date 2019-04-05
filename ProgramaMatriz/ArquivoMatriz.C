@@ -8,7 +8,7 @@ int main()
 {
 
     FILE *MatrizA, *MatrizB;
-    int i, j, la, ca, lb, cb, opcao = 3243;
+    int i, j, la, ca, lb, cb, opcao = 1, k;
     float *vma,*vmb, *vmc;
 
     //ABRE O ARQUIVO DA MATRIZ A e B
@@ -19,7 +19,7 @@ int main()
     {
 
         fscanf(MatrizA, "%i %i ", &la, &ca);
-        printf("%i%i", la, ca);
+        printf("%i%i\n", la, ca);
         vma = AlocaMatriz(la, ca);
         printf("\n");
 
@@ -35,9 +35,9 @@ int main()
         {
             for (j = 0 ; j < ca ; j++)
             {
-                printf("%f ", vma[(ca*i) + j]);
+                //printf("%0.f ", vma[(ca*i) + j]);
             }
-            printf("\n");
+            //printf("\n");
         }
     }
     fclose(MatrizA);
@@ -49,7 +49,7 @@ int main()
     {
 
         fscanf(MatrizA, "%i %i ", &lb, &cb);
-        printf("%i%i", lb, cb);
+        printf("%i%i\n", lb, cb);
         vmb = AlocaMatriz(lb, cb);
         printf("\n");
 
@@ -65,9 +65,9 @@ int main()
         {
             for (j = 0 ; j < cb ; j++)
             {
-                printf("%f ", vmb[(cb*i) + j]);
+                //printf("%0.f ", vmb[(cb*i) + j]);
             }
-            printf("\n");
+            //printf("\n");
         }
     }
     fclose(MatrizB);
@@ -98,13 +98,26 @@ int main()
 
         break;
 
+        case 4:
+            vmc = TriangularSuperior(la, ca, vma);
+        break;
+
+        case 5:
+            vmc = DiagPrnc(la, ca, vma);
+        break;
+
+        case 6:
+            printf("Qual o valor de k?");
+            scanf("%i", &k);
+            vmc = RetornaLinha(la, ca, vma, k);
+        break;
 
 
-
-
-
-
-
+        case 7:
+            printf("Qual o valor de k?");
+            scanf("%i", &k);
+            vmc = RetornaColuna(la, ca, vma, k);
+        break;
 
         }
     }
