@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1556288823 source:c:\users\t-gamer\documents\estrutura de dados\projeto tad\cofo\cofo.c
+	<stdio.h>
+	<stdlib.h>
+	"cofo.h"
+
+1556288289 c:\users\t-gamer\documents\estrutura de dados\projeto tad\cofo\cofo.h
+
+1556288141 source:c:\users\t-gamer\documents\estrutura de dados\projeto tad\cofo\main.c
+	<stdio.h>
+	<stdlib.h>
+	"cofo.h"
+
