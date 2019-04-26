@@ -14,6 +14,7 @@ int Menu(){
     printf(" [3] Inserir dados  \n");
     printf(" [4] Procurar pessoas \n");
     printf(" [5] Mostrar as pessoas \n");
+    printf(" [6] Remover pessoa \n");
 
     scanf("%d",&button);
 
