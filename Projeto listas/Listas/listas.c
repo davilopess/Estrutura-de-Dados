@@ -79,7 +79,7 @@ int sllInsertFirst(SLList *l, void *data)
 void *sllRemoveSpec(SLList *l, void *key, int (*cmp)(void *, void *))
 {
     SLLNode *aux, *prev;
-    void *data;
+    void* data;
     int stat;
 
     if (l != NULL)
@@ -95,20 +95,20 @@ void *sllRemoveSpec(SLList *l, void *key, int (*cmp)(void *, void *))
                 aux = aux->next;
                 stat = cmp(key, aux->data);
             }
-            if (stat == true)
-            {
-                if (prev != NULL)
+            if (stat == true){
+                if (prev == NULL)
                 {
-                    prev->next = aux->next;
+                    l->first = aux->next;
                 }
                 else
                 {
-                    l->first = NULL;
+                    prev->next = aux->next;
                 }
                 data = aux->data;
                 free(aux);
                 return data;
-            }
+
+        }
         }
     }
     return NULL;
@@ -402,9 +402,7 @@ int removeNome(SLList *c)
         mostraPessoa(p);
         free(p);
         return true;
-    }
-    else
-    {
+    }else{
         return false;
     }
 
@@ -416,7 +414,7 @@ int removeCpf(SLList *c)
 
     pessoa *p;
     char *proc = (char*)malloc(sizeof(char)*20);
-    printf("Digite o nome: \n");
+    printf("Digite o cpf: \n");
     scanf("%s", proc);
     flush_in();
 
@@ -448,18 +446,23 @@ void opcaoRemove(SLList *c)
         if (op==1)
         {
             exe = removeNome(c);
-            if(exe==0)
+            if(exe==1)
             {
-                printf("Pessoa nao existe\n");
+
+                printf("\nPessoa removida\n");
+            }else{
+                printf("\nNao foi possivel encontrar\n");
             }
         }
 
         if (op==2)
         {
             exe = removeCpf(c);
-            if(exe==0)
+            if(exe==1)
             {
-                printf("Pessoa nao existe\n");
+                 printf("\nPessoa removida\n");
+            }else{
+                printf("\nNao foi possivel encontrar\n");
             }
         }
     }
