@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1559251360 source:c:\users\t-gamer\documents\estrutura de dados\projeto listas\listas\main.c
+	<stdio.h>
+	<stdlib.h>
+	"listas.h"
+
+1559251360 c:\users\t-gamer\documents\estrutura de dados\projeto listas\listas\listas.h
+
+1559251360 source:c:\users\t-gamer\documents\estrutura de dados\projeto listas\listas\listas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"listas.h"
+
